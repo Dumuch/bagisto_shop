@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\SpaController;
+
 Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function () {
     /**
      * Store front home.
      */
-    Route::get('/', 'Webkul\Shop\Http\Controllers\HomeController@index')->defaults('_config', [
+    Route::get('/', SpaController::class)->defaults('_config', [
         'view' => 'shop::home.index'
     ])->name('shop.home.index');
+
 
     /**
      * Store front search.
