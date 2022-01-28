@@ -10,6 +10,10 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'view' => 'shop::home.index'
     ])->name('shop.home.index');
 
+    Route::get('/product', SpaController::class)->defaults('_config', [
+        'view' => 'shop::home.index'
+    ])->name('shop.reviews.index');
+
 
     /**
      * Store front search.
