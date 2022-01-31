@@ -1,25 +1,11 @@
 <template>
     <section class="section-margin mt-0">
         <div class="owl-carousel owl-theme hero-carousel">
-            <div class="hero-carousel__slide">
-                <img src="img/home/hero-slide1.png" alt="" class="img-fluid">
-                <a href="#" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
-                    <p>Accessories Item</p>
-                </a>
-            </div>
-            <div class="hero-carousel__slide">
-                <img src="img/home/hero-slide2.png" alt="" class="img-fluid">
-                <a href="#" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
-                    <p>Accessories Item</p>
-                </a>
-            </div>
-            <div class="hero-carousel__slide">
-                <img src="img/home/hero-slide3.png" alt="" class="img-fluid">
-                <a href="#" class="hero-carousel__slideOverlay">
-                    <h3>Wireless Headphone</h3>
-                    <p>Accessories Item</p>
+            <div class="hero-carousel__slide" v-for="obSlider in slider" :key="obSlider.id" >
+                <img src="obSlider.image_url" alt="" class="img-fluid">
+                <a href="" class="hero-carousel__slideOverlay">
+                    <h3>{{ obSlider.title }}</h3>
+                    <div class="" v-html="obSlider.content"></div>
                 </a>
             </div>
         </div>
@@ -28,7 +14,13 @@
 
 <script>
 export default {
-    name: "slider"
+    name: "slider",
+    props: {
+        slider: {
+            type: Object,
+            required: true
+        }
+    }
 }
 </script>
 

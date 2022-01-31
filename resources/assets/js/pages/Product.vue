@@ -2,10 +2,11 @@
     <div class="" >
         <template v-if="product">
             <section-header :name="product.name"></section-header>
-            <section-info></section-info>
-            <section-description></section-description>
+            <section-info :product="product"></section-info>
+            <section-description :product="product"></section-description>
         </template>
-        <!--================ Start related Product area =================-->
+        <template v-else>Загрузка</template>
+
         <section class="related-product-area section-margin--small mt-0">
             <div class="container">
                 <div class="section-intro pb-60px">
@@ -119,7 +120,6 @@
                 </div>
             </div>
         </section>
-        <!--================ end related Product area =================-->
     </div>
 </template>
 
@@ -145,7 +145,6 @@ export default {
         this.product = await fetch(`/api/products/${this.$route.params.id}`)
             .then((r) => r.json())
             .then((r) => r.data);
-    }
-
+    },
 }
 </script>

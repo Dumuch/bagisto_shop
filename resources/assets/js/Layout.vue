@@ -22,6 +22,11 @@ export default {
             required: true
         }
     },
+
+    beforeRouteEnter(to, from, next) {
+        console.log(to, from, next)
+        setTimeout(()=>next(), 1000)
+    },
 }
 </script>
 

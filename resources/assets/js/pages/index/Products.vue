@@ -35,6 +35,7 @@ export default {
             type: String,
         },
     },
+
     components: {
         'product-card': ProductCard,
     },
