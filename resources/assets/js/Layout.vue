@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import HeaderComponent from "./components/HeaderComponent";
-import FooterComponent from "./components/FooterComponent";
+import HeaderComponent from "./components/layout/HeaderComponent";
+import FooterComponent from "./components/layout/FooterComponent";
 
 export default {
     name: "Layout",
