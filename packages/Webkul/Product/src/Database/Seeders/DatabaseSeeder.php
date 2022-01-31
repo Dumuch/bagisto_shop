@@ -3,6 +3,7 @@
 namespace Webkul\Product\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Webkul\Category\Database\Seeders\ProductTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
