@@ -5,6 +5,7 @@ import Router from "vue-router";
 import Layout from "../Layout"
 import IndexPage from "../pages/Index"
 import ProductPage from "../pages/Product"
+import BlogPage from "../pages/Blog"
 
 
 Vue.use(Router);
@@ -28,16 +29,18 @@ const router = new Router({
             props: { component: IndexPage }
         },
         {
-            path: "/product",
+            path: "/product/:id",
             name: "ProductPage",
             component: Layout,
-            props: { component: ProductPage }
+            props: { component: ProductPage },
         },
-        // {
-        //     path: "/register",
-        //     name: "Register",
-        //     component: Register,
-        // },
+        {
+            path: "/blog",
+            name: "BlogPage",
+            component: Layout,
+            props: { component: BlogPage }
+        },
+
         // {
         //     path: "/dashboard",
         //     name: "Dashboard",
