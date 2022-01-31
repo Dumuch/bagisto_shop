@@ -1,24 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-
 import Layout from "../Layout"
 import IndexPage from "../pages/Index"
 import ProductPage from "../pages/Product"
-import BlogPage from "../pages/Blog"
-
 
 Vue.use(Router);
-
-// const ifAuthenticated = (to, from, next) => {
-//     const currentUser = firebase.auth().currentUser;
-//
-//     if (!currentUser) {
-//         next("login");
-//         return;
-//     } else next();
-// };
-
 const router = new Router({
     mode: "history",
     routes: [
@@ -26,7 +13,7 @@ const router = new Router({
             path: "/",
             name: "IndexPage",
             component: Layout,
-            props: { component: IndexPage }
+            props: { component: IndexPage },
         },
         {
             path: "/product/:id",
@@ -34,25 +21,6 @@ const router = new Router({
             component: Layout,
             props: { component: ProductPage },
         },
-        {
-            path: "/blog",
-            name: "BlogPage",
-            component: Layout,
-            props: { component: BlogPage }
-        },
-
-        // {
-        //     path: "/dashboard",
-        //     name: "Dashboard",
-        //     component: Dashboard,
-        //     beforeEnter: ifAuthenticated,
-        // },
-        // {
-        //     path: "/about",
-        //     name: "About",
-        //     component: About,
-        //     beforeEnter: ifAuthenticated,
-        // },
     ],
 });
 
