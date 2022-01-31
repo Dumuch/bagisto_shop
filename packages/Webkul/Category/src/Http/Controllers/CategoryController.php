@@ -2,6 +2,7 @@
 
 namespace Webkul\Category\Http\Controllers;
 
+use Webkul\Category\Models\Category;
 use Webkul\Core\Models\Channel;
 use Illuminate\Support\Facades\Event;
 use Webkul\Category\Repositories\CategoryRepository;
@@ -243,5 +244,17 @@ class CategoryController extends Controller
         }
 
         return $category->id === 1 || $rootIdInChannels->contains($category->id);
+    }
+
+
+    /**
+     * The Category at Product
+     */
+    static function getGategoryAtProduct($id)
+    {
+        return Category::select('id')
+            ->join('product_categories', 'product_categories.category_id', '=', 'categories.id' )
+            ->where('product_categories.product_id', $id)
+            ->first();
     }
 }
