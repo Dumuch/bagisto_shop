@@ -3,7 +3,9 @@
         <div class="main_menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt="">Название сайта</a>
+                    <router-link class="navbar-brand logo_h" to="/">
+                        <img src="img/logo.png" alt="">Название сайта
+                    </router-link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
