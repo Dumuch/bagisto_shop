@@ -5,7 +5,7 @@ const apiToLocalStorage = (key, apiKey) => {
     return new Promise(function (resolve, reject) {
         let data = JSON.parse(localStorage.getItem(key))
 
-        if (!data || data?.time < yesterday) {
+        if (!data || data.time < yesterday) {
              fetch(`/api/${apiKey}`)
                 .then((r) => r.json())
                 .then((r) => r.data)

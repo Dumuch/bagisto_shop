@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <header-component/>
-        <component :is="component"></component>
+        <slot/>
         <footer-component/>
     </div>
 </template>
@@ -15,17 +15,6 @@ export default {
     components: {
         "header-component": HeaderComponent,
         "footer-component": FooterComponent
-    },
-    props: {
-        component: {
-            type: Object,
-            required: true
-        }
-    },
-
-    beforeRouteEnter(to, from, next) {
-        console.log(to, from, next)
-        setTimeout(()=>next(), 1000)
     },
 }
 </script>

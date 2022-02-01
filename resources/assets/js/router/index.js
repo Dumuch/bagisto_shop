@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import Layout from "../Layout"
 import IndexPage from "../pages/Index"
 import ProductPage from "../pages/Product"
 
@@ -12,14 +11,14 @@ const router = new Router({
         {
             path: "/",
             name: "IndexPage",
-            component: Layout,
-            props: { component: IndexPage },
+            component: IndexPage,
+            // props: { component: IndexPage },
         },
         {
             path: "/product/:id",
             name: "ProductPage",
-            component: Layout,
-            props: { component: ProductPage },
+            component: ProductPage,
+            // props: { component: ProductPage },
         },
     ],
 });

@@ -37,9 +37,9 @@ export default {
         'section-products': Products,
     },
 
-    async mounted() {
-        this.popularProducts = await apiToLocalStorage('productsIndexPage', 'products')
-        this.slider = await apiToLocalStorage('sliderIndexPage', 'sliders')
+    mounted() {
+        apiToLocalStorage('productsIndexPage', 'products').then(res => this.popularProducts = res )
+        apiToLocalStorage('sliderIndexPage', 'sliders').then(res => this.slider = res )
     },
 
     methods: {}

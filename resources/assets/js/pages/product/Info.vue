@@ -12,7 +12,6 @@
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <div class="s_product_text">
-                        <h3></h3>
                         <h2>{{ product.formated_price }}</h2>
                         <ul class="list">
                             <li><a class="active" href="#"><span>Категория</span>: {{ product.category.name }}</a></li>
@@ -24,27 +23,10 @@
                             </li>
                         </ul>
                         <div class="" v-html="product.short_description"></div>
-                        <div class="product_count" style="display: flex; align-items: center">
-                            <label for="qty">Количество:</label>
-                            <div class="mr-3" style="position:relative; width: fit-content">
-                                <button style="background-color: red"
-                                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                        class="increase items-count" type="button"><i class="ti-angle-left"></i>
-                                </button>
-                                <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1"
-                                       title="Quantity:" class="input-text qty">
-                                <button style="background-color: red"
-                                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                        class="reduced items-count" type="button"><i class="ti-angle-right"></i>
-                                </button>
+                        <div class="mt-5">
+                            <button class="button primary-btn" href="#">Заказать товар</button>
+                        </div>
 
-                            </div>
-                            <a class="button primary-btn" href="#">Add to Cart</a>
-                        </div>
-                        <div class="card_area d-flex align-items-center">
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
