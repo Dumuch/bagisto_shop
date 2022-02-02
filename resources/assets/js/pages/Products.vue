@@ -2,8 +2,8 @@
     <section class="section-margin--small mb-5">
         <div class="container">
             <div class="row">
-                <section-filter :categories="categories" v-on:choose-category="chooseCategory"></section-filter>
-                <section-products :products="renderProducts" v-on:choose-search="chooseSearch"></section-products>
+                <section-filter :categories="categories" @choose-category="chooseCategory"></section-filter>
+                <section-products :products="renderProducts" @choose-search="chooseSearch"></section-products>
             </div>
         </div>
     </section>
