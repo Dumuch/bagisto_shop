@@ -15,11 +15,8 @@
                     </button>
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                            <li class="nav-item active">
-                                <router-link class="nav-link" to="/">Главная</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/products">Товары</router-link>
+                            <li v-bind:class="{ active: item.active }" class="nav-item" v-for="item in siteNavList">
+                                <router-link class="nav-link" v-bind:to="item.url">{{ item.title }}</router-link>
                             </li>
                         </ul>
                     </div>
@@ -31,7 +28,14 @@
 
 <script>
 export default {
-    name: "HeaderComponent"
+    name: "HeaderComponent",
+    props: {
+        siteNavList:{
+            type: Object,
+            required: false,
+        },
+    },
+
 }
 </script>
 
