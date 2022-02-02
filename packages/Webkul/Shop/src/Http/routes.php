@@ -14,7 +14,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'view' => 'shop::home.index'
     ])->name('shop.reviews.index');
 
-    Route::get('/blog', SpaController::class)->defaults('_config', [
+    Route::get('/products', SpaController::class)->defaults('_config', [
         'view' => 'shop::home.index'
     ])->name('shop.reviews.index');
 
