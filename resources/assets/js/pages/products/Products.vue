@@ -13,26 +13,33 @@
         </div>
 
         <section class="lattest-product-area pb-40 category-list">
+            <components-spinner v-if="isSpinner"></components-spinner>
+
             <div class="row">
                 <div class="col-md-6 col-lg-4" v-for="product in products">
-                 <component-product-card :product="product"></component-product-card>
+                    <component-product-card :product="product"></component-product-card>
                 </div>
-
             </div>
         </section>
+
+
     </div>
 </template>
 
 <script>
 import ProductCard from "../../components/catalog/ProductCard";
+import Spinner from "../../components/Spinner";
+
 export default {
     name: "Products",
     components: {
-        'component-product-card': ProductCard
+        'component-product-card': ProductCard,
+        'components-spinner': Spinner
     },
-    data(){
+    data() {
         return {
             search: null,
+            isSpinner: true
         }
     },
     props: {
@@ -44,8 +51,15 @@ export default {
         "choose-search": (value) => typeof value === "string",
     },
     methods: {
-        searchProducts(search){
+        searchProducts(search) {
             this.$emit("choose-search", search);
+        }
+    },
+
+
+    updated() {
+        if(this.products && this.isSpinner) {
+            this.isSpinner = false
         }
     },
     watch: {

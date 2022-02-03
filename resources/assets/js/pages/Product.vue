@@ -5,7 +5,7 @@
             <section-info :product="product"></section-info>
             <section-description :product="product"></section-description>
         </template>
-        <template v-else>Загрузка</template>
+        <components-spinner v-else></components-spinner>
 
         <section class="related-product-area section-margin--small mt-0">
             <div class="container">
@@ -127,6 +127,8 @@
 import Header from "./product/Header";
 import Info from "./product/Info";
 import Description from "./product/Description";
+import Spinner from "../components/Spinner"
+import {apiToLocalStorageArrProducts} from "../helper/api";
 
 export default {
     name: "ProductPage",
@@ -140,11 +142,10 @@ export default {
         'section-header': Header,
         'section-info': Info,
         'section-description': Description,
+        'components-spinner': Spinner
     },
-    async mounted(){
-        this.product = await fetch(`/api/products/${this.$route.params.id}`)
-            .then((r) => r.json())
-            .then((r) => r.data);
+    mounted(){
+        apiToLocalStorageArrProducts(this.$route.params.id).then(r => this.product = r)
     },
 }
 </script>

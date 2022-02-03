@@ -13,7 +13,7 @@
                         </ul>
                     </form>
                 </li>
-                <button v-on:click="resetFilter">Сбросить фильтр</button>
+                <button class="button primary-btn" v-on:click="resetFilter">Сбросить фильтр</button>
             </ul>
         </div>
     </div>
