@@ -2,6 +2,8 @@ const { VueLoaderPlugin } = require("vue-loader");
 const path = require("path");
 
 module.exports = {
+    mode: 'production',
+
     entry: {
         app: "./resources/assets/js/app.js"
     },
@@ -22,9 +24,10 @@ module.exports = {
                 loader: "vue-loader",
             },
             {
-                test: /\.css$/i,
+                test: /\.css$/,
                 use: [
-                    'style-loader','css-loader'
+                    'style-loader',
+                    'css-loader'
                 ],
             },
         ],
@@ -36,6 +39,6 @@ module.exports = {
         alias: {
             vue$: "vue/dist/vue.runtime.esm.js",
         },
-        extensions: ["*", ".js", ".vue", ".json"],
+        extensions: ["*", ".js", ".vue", ".json", ".css"],
     },
 };

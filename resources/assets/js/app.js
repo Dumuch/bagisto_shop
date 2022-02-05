@@ -1,9 +1,6 @@
-require('./bootstrap');
-
 import "../css/bootstrap.min.css";
 import "../css/main.css";
 import "../css/style.css";
-
 
 import Vue from "vue";
 

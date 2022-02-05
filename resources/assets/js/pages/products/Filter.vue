@@ -1,20 +1,21 @@
 <template>
     <div class="col-xl-3 col-lg-4 col-md-5">
         <div class="sidebar-categories">
-            <div class="head">Browse Categories</div>
+            <div class="head">Категории</div>
             <ul class="main-categories">
                 <li class="common-filter">
                     <form action="#">
                         <ul>
                             <li class="filter-list" v-for="item in categories">
-                                <input v-on:click="chooseCategory(item)" class="pixel-radio" type="radio" v-bind:id="item.id" name="category">
+                                <input v-on:click="chooseCategory(item)" class="pixel-radio" type="radio"
+                                       v-bind:id="item.id" name="category">
                                 <label v-bind:for="item.id">{{ item.name }}</label>
                             </li>
                         </ul>
                     </form>
                 </li>
-                <button class="button primary-btn" v-on:click="resetFilter">Сбросить фильтр</button>
             </ul>
+            <button class="button primary-btn mt-2" v-on:click="resetFilter">очистить</button>
         </div>
     </div>
 
@@ -37,8 +38,9 @@ export default {
         },
         resetFilter() {
             this.chooseCategory(null)
+            document.querySelector('input[type="radio"]:checked').checked = false
         }
-    }
+    },
 }
 </script>
 

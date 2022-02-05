@@ -5,8 +5,8 @@
             <div class="row s_product_inner">
                 <div class="col-lg-6">
                     <div class="owl-carousel owl-theme s_Product_carousel">
-                        <div class="single-prd-item" v-for="image in product.images" :key="image.id">
-                            <img class="img-fluid" v-bind:src="image.large_image_url" alt="">
+                        <div class="single-prd-item">
+                            <img class="img-fluid" v-bind:src="product.base_image.large_image_url" alt="">
                         </div>
                     </div>
                 </div>
@@ -23,9 +23,6 @@
                             </li>
                         </ul>
                         <div class="" v-html="product.short_description"></div>
-                        <div class="mt-5">
-                            <button class="button primary-btn" href="#">Заказать товар</button>
-                        </div>
 
                     </div>
                 </div>

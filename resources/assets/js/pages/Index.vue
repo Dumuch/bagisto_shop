@@ -2,14 +2,6 @@
     <div class="">
         <div class="site-main">
 
-            <section-slider
-                v-if="slider.length > 0"
-                :slider="slider"
-            />
-
-            <components-spinner v-else></components-spinner>
-
-
             <section-products
                 title="Популярные товары"
                 :products="popularProducts"
@@ -23,11 +15,11 @@
 </template>
 <script>
 
-import Slider from './index/Slider';
 import Products from './index/Products';
 import Spinner from "../components/Spinner";
 
 import {apiToLocalStorage} from "../helper/api";
+
 export default {
     name: 'IndexPage',
     data() {
@@ -38,14 +30,12 @@ export default {
     },
 
     components: {
-        'section-slider': Slider,
         'section-products': Products,
         'components-spinner': Spinner
     },
 
     mounted() {
-        apiToLocalStorage('productsIndexPage', 'products').then(res => this.popularProducts = res )
-        apiToLocalStorage('sliderIndexPage', 'sliders').then(res => this.slider = res )
+        apiToLocalStorage('productsIndexPage', 'products').then(res => this.popularProducts = res)
     },
 
     methods: {}

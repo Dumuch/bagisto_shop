@@ -1,5 +1,5 @@
 <template>
-    <section class="section-margin calc-60px">
+    <section class="">
         <div class="container">
             <div class="section-intro pb-60px">
                 <p>Самое продаваемое</p>
