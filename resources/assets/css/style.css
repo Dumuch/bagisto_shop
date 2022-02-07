@@ -4791,8 +4791,8 @@ a {
     stroke-dashoffset: 0;
     transform-origin: center;
     animation:
-    dash 1.4s ease-in-out infinite,
-    colors 6s ease-in-out infinite;
+        dash 1.4s ease-in-out infinite,
+        colors 6s ease-in-out infinite;
 }
 
 @keyframes colors {

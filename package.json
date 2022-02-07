@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "buid": "npx webpack build",
+        "build": "npx webpack build",
         "watch": "npx webpack watch"
     },
     "devDependencies": {

@@ -12,7 +12,7 @@
                 <div
                     class="col-md-6 col-lg-4 col-xl-3"
                     v-for="product in products"
-                    :key="product.id"
+                    v-bind:key="product.id"
                 >
                     <product-card :product="product"></product-card>
                 </div>
@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import ProductCard from '../../components/catalog/ProductCard';
+import ProductCard from "../../components/catalog/ProductCard";
 
 export default {
-    name: 'PopularProduct',
+    name: "PopularProduct",
     props: {
         products: {
-            type: Object,
+            type: Array,
             required: true,
         },
         title: {
@@ -37,13 +37,13 @@ export default {
     },
 
     components: {
-        'product-card': ProductCard,
+        "product-card": ProductCard,
     },
     computed: {
         arrTitle() {
-            const arr = this.title.split(' ');
+            const arr = this.title.split(" ");
             const importantStr = arr.pop();
-            return [arr.join(' '), importantStr];
+            return [arr.join(" "), importantStr];
         },
     },
 };

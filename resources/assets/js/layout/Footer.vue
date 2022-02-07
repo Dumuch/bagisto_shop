@@ -5,10 +5,9 @@
                 <div class="row section_gap">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-footer-widget tp_widgets">
-                            <h4 class="footer_title large_title">Название сайта</h4>
+                            <h4 class="footer_title large_title">Shop SPA</h4>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -17,10 +16,8 @@
 
 <script>
 export default {
-    name: "FooterComponent"
-}
+    name: "FooterComponent",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
